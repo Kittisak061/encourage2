@@ -1,0 +1,1002 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>แรงใจน้อยๆ จากใจ 🌸</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500;600&family=Kanit:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --pink: #ffb5c8;
+        --pink-light: #ffe4ee;
+        --peach: #ffd4b8;
+        --yellow: #fff0a0;
+        --mint: #b8f0e0;
+        --lavender: #d8c8ff;
+        --sky: #c8e8ff;
+        --cream: #fffdf5;
+        --deep-pink: #ff6b9d;
+        --deep-purple: #9b7ec8;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Mitr", sans-serif;
+        background: var(--cream);
+        min-height: 100vh;
+        overflow-x: hidden;
+        cursor:
+          url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><text y='20' font-size='20'>🌸</text></svg>")
+            12 12,
+          auto;
+      }
+
+      /* ---- ANIMATED BACKGROUND ---- */
+      .bg-wrap {
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+        background: linear-gradient(
+          135deg,
+          #fff0f7 0%,
+          #fff8f0 30%,
+          #f0fff8 60%,
+          #f5f0ff 100%
+        );
+        overflow: hidden;
+      }
+
+      .blob {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(60px);
+        opacity: 0.35;
+        animation: blobFloat 8s ease-in-out infinite alternate;
+      }
+      .blob1 {
+        width: 350px;
+        height: 350px;
+        background: #ffb5c8;
+        top: -80px;
+        left: -80px;
+        animation-delay: 0s;
+      }
+      .blob2 {
+        width: 280px;
+        height: 280px;
+        background: #b8f0e0;
+        top: 40%;
+        right: -60px;
+        animation-delay: 2s;
+      }
+      .blob3 {
+        width: 320px;
+        height: 320px;
+        background: #d8c8ff;
+        bottom: -80px;
+        left: 20%;
+        animation-delay: 4s;
+      }
+      .blob4 {
+        width: 200px;
+        height: 200px;
+        background: #fff0a0;
+        top: 10%;
+        left: 50%;
+        animation-delay: 1s;
+      }
+
+      @keyframes blobFloat {
+        from {
+          transform: translate(0, 0) scale(1);
+        }
+        to {
+          transform: translate(20px, 30px) scale(1.08);
+        }
+      }
+
+      /* ---- FLOATING SPARKLES ---- */
+      .sparkle {
+        position: fixed;
+        pointer-events: none;
+        font-size: 18px;
+        animation: sparkleRise linear infinite;
+        z-index: 1;
+      }
+
+      @keyframes sparkleRise {
+        0% {
+          transform: translateY(110vh) rotate(0deg);
+          opacity: 0;
+        }
+        10% {
+          opacity: 1;
+        }
+        90% {
+          opacity: 0.6;
+        }
+        100% {
+          transform: translateY(-10vh) rotate(360deg);
+          opacity: 0;
+        }
+      }
+
+      /* ---- MAIN LAYOUT ---- */
+      .page {
+        position: relative;
+        z-index: 2;
+        min-height: 100vh;
+        padding: 20px;
+      }
+
+      /* ---- HEADER ---- */
+      header {
+        text-align: center;
+        padding: 50px 20px 30px;
+      }
+
+      .header-cloud {
+        display: inline-block;
+        background: white;
+        border-radius: 60px;
+        padding: 14px 40px;
+        box-shadow:
+          0 4px 30px rgba(255, 107, 157, 0.15),
+          0 0 0 3px var(--pink-light);
+        margin-bottom: 16px;
+        animation: cloudBob 3s ease-in-out infinite;
+      }
+
+      @keyframes cloudBob {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-8px);
+        }
+      }
+
+      .site-title {
+        font-size: clamp(28px, 6vw, 56px);
+        font-weight: 600;
+        color: var(--deep-pink);
+        letter-spacing: 1px;
+        line-height: 1.2;
+      }
+
+      .site-sub {
+        font-size: clamp(14px, 3vw, 20px);
+        color: var(--deep-purple);
+        font-weight: 300;
+        margin-top: 6px;
+      }
+
+      /* ---- MASCOT ---- */
+      .mascot-wrap {
+        display: flex;
+        justify-content: center;
+        margin: 10px 0 20px;
+      }
+
+      .mascot {
+        position: relative;
+        width: 120px;
+        height: 120px;
+        animation: mascotBounce 2s ease-in-out infinite;
+      }
+
+      @keyframes mascotBounce {
+        0%,
+        100% {
+          transform: translateY(0) rotate(-3deg);
+        }
+        50% {
+          transform: translateY(-12px) rotate(3deg);
+        }
+      }
+
+      /* Bear SVG face */
+      .bear {
+        width: 120px;
+        height: 120px;
+      }
+
+      /* ---- QUOTE CARD ---- */
+      .quote-section {
+        max-width: 680px;
+        margin: 0 auto 40px;
+        padding: 0 16px;
+      }
+
+      .quote-card {
+        background: white;
+        border-radius: 30px;
+        padding: 36px 32px;
+        box-shadow:
+          0 8px 40px rgba(255, 107, 157, 0.12),
+          0 0 0 2px var(--pink-light),
+          inset 0 1px 0 rgba(255, 255, 255, 0.8);
+        position: relative;
+        overflow: hidden;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      .quote-card:hover {
+        transform: translateY(-4px);
+        box-shadow:
+          0 16px 50px rgba(255, 107, 157, 0.2),
+          0 0 0 2px var(--pink);
+      }
+
+      .quote-deco-top {
+        position: absolute;
+        top: -20px;
+        right: -20px;
+        width: 100px;
+        height: 100px;
+        background: var(--pink-light);
+        border-radius: 50%;
+        opacity: 0.6;
+      }
+
+      .quote-deco-bot {
+        position: absolute;
+        bottom: -30px;
+        left: -20px;
+        width: 120px;
+        height: 120px;
+        background: var(--mint);
+        border-radius: 50%;
+        opacity: 0.4;
+      }
+
+      .quote-emoji {
+        font-size: 40px;
+        display: block;
+        margin-bottom: 12px;
+        animation: emojiSpin 4s ease-in-out infinite;
+      }
+
+      @keyframes emojiSpin {
+        0%,
+        100% {
+          transform: scale(1) rotate(0deg);
+        }
+        25% {
+          transform: scale(1.15) rotate(8deg);
+        }
+        75% {
+          transform: scale(1.1) rotate(-8deg);
+        }
+      }
+
+      .quote-text {
+        font-size: clamp(18px, 4vw, 26px);
+        font-weight: 500;
+        color: #444;
+        line-height: 1.6;
+        position: relative;
+        z-index: 1;
+        min-height: 80px;
+        transition: opacity 0.4s ease;
+      }
+
+      .quote-author {
+        font-size: 14px;
+        color: #bbb;
+        margin-top: 16px;
+        font-weight: 300;
+        position: relative;
+        z-index: 1;
+      }
+
+      /* ---- NEW QUOTE BUTTON ---- */
+      .btn-wrap {
+        display: flex;
+        justify-content: center;
+        gap: 14px;
+        flex-wrap: wrap;
+        margin: 24px 0 0;
+      }
+
+      .btn-quote {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: linear-gradient(135deg, #ff6b9d, #ff9bb5);
+        color: white;
+        font-family: "Mitr", sans-serif;
+        font-size: 17px;
+        font-weight: 500;
+        border: none;
+        border-radius: 50px;
+        padding: 14px 32px;
+        cursor: pointer;
+        box-shadow:
+          0 6px 24px rgba(255, 107, 157, 0.35),
+          0 0 0 3px rgba(255, 107, 157, 0.15);
+        transition: all 0.2s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn-quote::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(255, 255, 255, 0);
+        transition: background 0.2s;
+      }
+
+      .btn-quote:hover {
+        transform: translateY(-3px) scale(1.04);
+        box-shadow:
+          0 10px 30px rgba(255, 107, 157, 0.4),
+          0 0 0 4px rgba(255, 107, 157, 0.2);
+      }
+
+      .btn-quote:active {
+        transform: scale(0.97);
+      }
+
+      .btn-share {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: white;
+        color: var(--deep-purple);
+        font-family: "Mitr", sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        border: 2px solid var(--lavender);
+        border-radius: 50px;
+        padding: 13px 28px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .btn-share:hover {
+        background: var(--lavender);
+        transform: translateY(-2px);
+      }
+
+      /* ---- CARDS GRID ---- */
+      .cards-section {
+        max-width: 900px;
+        margin: 0 auto 60px;
+        padding: 0 16px;
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: clamp(20px, 4vw, 30px);
+        font-weight: 500;
+        color: var(--deep-pink);
+        margin-bottom: 24px;
+      }
+
+      .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 18px;
+      }
+
+      .card {
+        background: white;
+        border-radius: 24px;
+        padding: 28px 24px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+        text-align: center;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+      }
+
+      .card-bg {
+        position: absolute;
+        inset: 0;
+        opacity: 0.15;
+        border-radius: 24px;
+      }
+
+      .card:nth-child(1) .card-bg {
+        background: linear-gradient(135deg, #ffb5c8, #ffd4b8);
+      }
+      .card:nth-child(2) .card-bg {
+        background: linear-gradient(135deg, #b8f0e0, #c8e8ff);
+      }
+      .card:nth-child(3) .card-bg {
+        background: linear-gradient(135deg, #d8c8ff, #ffb5c8);
+      }
+
+      .card-icon {
+        font-size: 42px;
+        margin-bottom: 12px;
+        display: block;
+      }
+      .card-title {
+        font-size: 18px;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 8px;
+        position: relative;
+        z-index: 1;
+      }
+      .card-text {
+        font-size: 15px;
+        color: #888;
+        line-height: 1.7;
+        font-weight: 300;
+        position: relative;
+        z-index: 1;
+      }
+
+      /* ---- PROGRESS TRACKER ---- */
+      .tracker-section {
+        max-width: 680px;
+        margin: 0 auto 60px;
+        padding: 0 16px;
+      }
+
+      .tracker-card {
+        background: white;
+        border-radius: 28px;
+        padding: 32px 28px;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+      }
+
+      .tracker-title {
+        font-size: 20px;
+        font-weight: 500;
+        color: #444;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .steps {
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-end;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .step {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+      }
+
+      .step-circle {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        border: 3px solid var(--pink-light);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        background: white;
+        transition: all 0.25s ease;
+        box-shadow: 0 4px 12px rgba(255, 107, 157, 0.1);
+      }
+
+      .step.done .step-circle {
+        background: linear-gradient(135deg, #ff6b9d, #ff9bb5);
+        border-color: #ff6b9d;
+        transform: scale(1.1);
+        box-shadow: 0 6px 20px rgba(255, 107, 157, 0.3);
+      }
+
+      .step-label {
+        font-size: 12px;
+        color: #aaa;
+        font-weight: 300;
+        text-align: center;
+        max-width: 64px;
+        line-height: 1.3;
+      }
+
+      .step.done .step-label {
+        color: var(--deep-pink);
+        font-weight: 500;
+      }
+
+      .mood-bar {
+        margin-top: 24px;
+        background: var(--pink-light);
+        border-radius: 20px;
+        height: 12px;
+        overflow: hidden;
+      }
+
+      .mood-fill {
+        height: 100%;
+        background: linear-gradient(90deg, #ff6b9d, #ffb5c8, #d8c8ff);
+        border-radius: 20px;
+        width: 0%;
+        transition: width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
+
+      .mood-label {
+        text-align: center;
+        font-size: 14px;
+        color: #999;
+        margin-top: 10px;
+      }
+
+      /* ---- FOOTER ---- */
+      footer {
+        text-align: center;
+        padding: 30px 20px 50px;
+        color: #ccc;
+        font-size: 14px;
+        font-weight: 300;
+      }
+
+      /* ---- TOAST ---- */
+      .toast {
+        position: fixed;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%) translateY(80px);
+        background: white;
+        border-radius: 50px;
+        padding: 14px 28px;
+        font-size: 15px;
+        color: var(--deep-pink);
+        font-family: "Mitr", sans-serif;
+        box-shadow:
+          0 8px 32px rgba(255, 107, 157, 0.25),
+          0 0 0 2px var(--pink-light);
+        transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        z-index: 999;
+        white-space: nowrap;
+      }
+
+      .toast.show {
+        transform: translateX(-50%) translateY(0);
+      }
+
+      /* ---- HEART BURST ---- */
+      .heart-burst {
+        position: fixed;
+        pointer-events: none;
+        z-index: 100;
+        font-size: 22px;
+        animation: heartBurst 1.2s ease-out forwards;
+      }
+
+      @keyframes heartBurst {
+        0% {
+          transform: translate(-50%, -50%) scale(0) rotate(0deg);
+          opacity: 1;
+        }
+        60% {
+          transform: translate(-50%, -120%) scale(1.3) rotate(15deg);
+          opacity: 1;
+        }
+        100% {
+          transform: translate(-50%, -200%) scale(0.5) rotate(30deg);
+          opacity: 0;
+        }
+      }
+
+      /* ---- FADE TRANSITION ---- */
+      .fade-out {
+        opacity: 0 !important;
+        transform: scale(0.95);
+        transition: all 0.3s ease;
+      }
+      .fade-in {
+        opacity: 1 !important;
+        transform: scale(1);
+        transition: all 0.35s ease 0.1s;
+      }
+
+      /* ---- RESPONSIVE ---- */
+      @media (max-width: 480px) {
+        .steps {
+          gap: 6px;
+        }
+        .step-circle {
+          width: 44px;
+          height: 44px;
+          font-size: 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- BACKGROUND -->
+    <div class="bg-wrap">
+      <div class="blob blob1"></div>
+      <div class="blob blob2"></div>
+      <div class="blob blob3"></div>
+      <div class="blob blob4"></div>
+    </div>
+
+    <!-- SPARKLES (injected by JS) -->
+
+    <div class="page">
+      <!-- HEADER -->
+      <header>
+        <div class="header-cloud">
+          <div class="site-title">🌸 แรงใจน้อยๆ 🌸</div>
+          <div class="site-sub">สำหรับวันที่อยากให้มีคนบอกว่า "เก่งมาก!"</div>
+        </div>
+      </header>
+
+      <!-- MASCOT -->
+      <div class="mascot-wrap">
+        <div class="mascot">
+          <svg
+            class="bear"
+            viewBox="0 0 120 120"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <!-- Ears -->
+            <circle cx="28" cy="30" r="16" fill="#FFB5C8" />
+            <circle cx="92" cy="30" r="16" fill="#FFB5C8" />
+            <circle cx="28" cy="30" r="10" fill="#FFD4DE" />
+            <circle cx="92" cy="30" r="10" fill="#FFD4DE" />
+            <!-- Body -->
+            <ellipse cx="60" cy="85" rx="32" ry="28" fill="#FFD4DE" />
+            <!-- Head -->
+            <circle cx="60" cy="55" r="38" fill="#FFD4DE" />
+            <!-- Cheeks -->
+            <circle cx="38" cy="62" r="9" fill="#FF9BB5" opacity="0.5" />
+            <circle cx="82" cy="62" r="9" fill="#FF9BB5" opacity="0.5" />
+            <!-- Eyes -->
+            <ellipse cx="47" cy="50" rx="5" ry="6" fill="#4A3030" />
+            <ellipse cx="73" cy="50" rx="5" ry="6" fill="#4A3030" />
+            <circle cx="49" cy="48" r="2" fill="white" />
+            <circle cx="75" cy="48" r="2" fill="white" />
+            <!-- Nose -->
+            <ellipse cx="60" cy="61" rx="6" ry="4" fill="#FF6B9D" />
+            <!-- Mouth -->
+            <path
+              d="M52 67 Q60 74 68 67"
+              stroke="#FF6B9D"
+              stroke-width="2.5"
+              fill="none"
+              stroke-linecap="round"
+            />
+            <!-- Belly -->
+            <ellipse
+              cx="60"
+              cy="88"
+              rx="18"
+              ry="14"
+              fill="#FFE4EE"
+              opacity="0.7"
+            />
+            <!-- Heart on belly -->
+            <text x="54" y="94" font-size="14">🌸</text>
+            <!-- Arms -->
+            <ellipse
+              cx="22"
+              cy="78"
+              rx="10"
+              ry="7"
+              fill="#FFD4DE"
+              transform="rotate(-20,22,78)"
+            />
+            <ellipse
+              cx="98"
+              cy="78"
+              rx="10"
+              ry="7"
+              fill="#FFD4DE"
+              transform="rotate(20,98,78)"
+            />
+          </svg>
+        </div>
+      </div>
+
+      <!-- QUOTE CARD -->
+      <div class="quote-section">
+        <div class="quote-card">
+          <div class="quote-deco-top"></div>
+          <div class="quote-deco-bot"></div>
+          <span class="quote-emoji" id="quoteEmoji">🌟</span>
+          <div class="quote-text" id="quoteText">
+            วันนี้อาจจะหนัก แต่เธอก็หนักแน่นพอจะรับมันได้นะ ❤️
+          </div>
+          <div class="quote-author" id="quoteAuthor">
+            — จากใจคนที่เอาใจช่วยพี่อยู่ตลอด
+          </div>
+        </div>
+
+        <div class="btn-wrap">
+          <button class="btn-quote" onclick="nextQuote()">
+            ✨ ขอกำลังใจเพิ่ม!
+          </button>
+          <button class="btn-share" onclick="copyQuote()">
+            🔗 คัดลอกแชร์เพื่อน
+          </button>
+        </div>
+      </div>
+
+      <!-- MINI CARDS -->
+      <div class="cards-section">
+        <div class="section-title">💌 ข้อคิดเล็กๆ น้อยๆ สำหรับพี่ครับ</div>
+        <div class="cards-grid">
+          <div class="card">
+            <div class="card-bg"></div>
+            <span class="card-icon">🌱</span>
+            <div class="card-title">เติบโตทีละนิด</div>
+            <div class="card-text">
+              ไม่ต้องเก่งทุกอย่างในวันเดียว
+              แค่ดีเก่งกว่าเมื่อวานสัดนิดก็พอแล้วนะครับ
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-bg"></div>
+            <span class="card-icon">🌊</span>
+            <div class="card-title">พักได้เสมอ</div>
+            <div class="card-text">
+              การพักไม่ใช่การแพ้นะครับ มันคือการเติมพลังเพื่อไปต่อครับ
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-bg"></div>
+            <span class="card-icon">🎀</span>
+            <div class="card-title">พี่มีคุณค่า</div>
+            <div class="card-text">
+              แค่มีพี่อยู่ในโลกนี้ก็ทำให้มันดีขึ้นแล้ว จริงๆนะครับ 🥺
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TRACKER -->
+      <div class="tracker-section">
+        <div class="tracker-card">
+          <div class="tracker-title">✅ เช็คความดีของวันนี้</div>
+          <div class="steps" id="steps">
+            <div class="step" onclick="toggleStep(this)" data-step="0">
+              <div class="step-circle">☀️</div>
+              <div class="step-label">ตื่นแล้ว!</div>
+            </div>
+            <div class="step" onclick="toggleStep(this)" data-step="1">
+              <div class="step-circle">🥛</div>
+              <div class="step-label">ดื่มน้ำ</div>
+            </div>
+            <div class="step" onclick="toggleStep(this)" data-step="2">
+              <div class="step-circle">🍙</div>
+              <div class="step-label">กินข้าว</div>
+            </div>
+            <div class="step" onclick="toggleStep(this)" data-step="3">
+              <div class="step-circle">🚶</div>
+              <div class="step-label">ขยับตัว</div>
+            </div>
+            <div class="step" onclick="toggleStep(this)" data-step="4">
+              <div class="step-circle">💤</div>
+              <div class="step-label">พักผ่อน</div>
+            </div>
+            <div class="step" onclick="toggleStep(this)" data-step="5">
+              <div class="step-circle">💗</div>
+              <div class="step-label">รักตัวเอง</div>
+            </div>
+          </div>
+          <div class="mood-bar">
+            <div class="mood-fill" id="moodFill"></div>
+          </div>
+          <div class="mood-label" id="moodLabel">
+            กดเช็คสิ่งที่พี่ทำวันนี้นะครับ 🌸
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        สร้างด้วยความรักและแรงใจ 🌸 &nbsp;•&nbsp; ผมทำเพื่อพี่โดยเฉพาะนะครับ
+      </footer>
+    </div>
+
+    <!-- TOAST -->
+    <div class="toast" id="toast">📋 คัดลอกแล้ว! แชร์ให้เพื่อนด้วยนะ 🌸</div>
+
+    <script>
+      const quotes = [
+        {
+          emoji: "🌟",
+          text: "วันนี้อาจจะหนัก แต่พี่ก็หนักแน่นพอจะรับมันได้นะ",
+          author: "— จากใจคนที่เอาใจช่วยพี่อยู่ตลอด",
+        },
+        {
+          emoji: "🌸",
+          text: "พี่มาไกลมากแล้วนะ แม้แต่ก้าวเล็กๆ ก็นับเป็นความสำเร็จ 💖",
+          author: "— ขอให้รู้ว่าความพยายามของพี่มีคุณค่า",
+        },
+        {
+          emoji: "🍀",
+          text: "ไม่ต้องสมบูรณ์แบบทุกวัน แค่พยายามอยู่เสมอก็เก่งมากแล้ว",
+          author: "— ใครๆ ก็ต้องการวันพักบ้าง",
+        },
+        {
+          emoji: "🌈",
+          text: "หลังพายุฝนผ่านไป รุ้งสวยๆ มักโผล่ขึ้นมาเสมอ รอก่อนนะ 🌈",
+          author: "— ให้กำลังใจจากคนทางไกล",
+        },
+        {
+          emoji: "💫",
+          text: "พี่ไม่ได้สู้คนเดียว มีคนคิดถึงพี่อยู่เสมอนะ",
+          author: "— ให้รู้ว่าพี่ไม่ได้อยู่คนเดียว",
+        },
+        {
+          emoji: "🎀",
+          text: "บางทีแค่ผ่านวันไปได้ก็คือชัยชนะที่ยิ่งใหญ่มากพอแล้ว",
+          author: "— ทุกวันที่ผ่านไปคือความแข็งแกร่งของพีนะครับ",
+        },
+        {
+          emoji: "🐝",
+          text: "พี่ทำดีที่สุดเท่าที่ทำได้ในตอนนี้ และนั่นก็มากพอแล้ว ❤️",
+          author: "— จากน้องคนหนึ่งที่เชื่อในตัวพี่ครับ",
+        },
+        {
+          emoji: "🌙",
+          text: "วันนี้อาจไม่ดีพอ แต่พรุ่งนี้มีโอกาสใหม่เสมอ อย่าลืมนอนหลับพักผ่อนนะ",
+          author: "— ดูแลตัวเองด้วยนะครับพี่",
+        },
+        {
+          emoji: "🦋",
+          text: "การเปลี่ยนแปลงใช้เวลา แต่พี่กำลังเติบโตอยู่แล้ว แม้จะยังไม่เห็นก็ตาม",
+          author: "— ดักแด้ก็ต้องใช้เวลากว่าจะเป็นผีเสื้อ",
+        },
+        {
+          emoji: "⭐",
+          text: "สวัสดีครับพี่ วันนี้ที่พี่มาถึงแล้ว นั่นแปลว่าพี่ยังสู้อยู่ เก่งมากเลยนะ 🥹",
+          author: "— ดีใจที่พี่ยังอยู่ที่นี่นะ",
+        },
+        {
+          emoji: "🌺",
+          text: "ความรู้สึกของพี่นั้นถูกต้องเสมอ ไม่ต้องแกล้งทำเป็นว่าโอเคถ้ายังไม่โอเคนะครับ",
+          author: "— อนุญาตให้ตัวเองรู้สึกได้",
+        },
+        {
+          emoji: "🍩",
+          text: "พี่สมควรได้รับสิ่งดีๆ ในชีวิต รวมถึงโดนัทอร่อยๆ ด้วยนะ 🍩✨",
+          author: "— เพราะพี่เป็นคนที่พิเศษมาก",
+        },
+        {
+          emoji: "☁️",
+          text: "ไม่ต้องเก่งตลอดก็ได้นะครับ วันนี้พักก่อน เดี๋ยวผมคอยเป็นกำลังใจให้",
+          author: "- จากคนที่อยากดูแลพี่",
+        },
+        {
+          emoji: "🤍",
+          text: "ถ้าไม่สบายก็พักเยอะ ๆ นะ เดี๋ยวเรารอวันที่พี่กลับมาสดใสเหมือนเดิม",
+          author: "- จากคนที่คอยเป็นกำลังใจ",
+        },
+      ];
+
+      let currentIdx = 0;
+
+      function nextQuote() {
+        const el = document.getElementById("quoteText");
+        const emoji = document.getElementById("quoteEmoji");
+        const author = document.getElementById("quoteAuthor");
+
+        el.style.opacity = "0";
+        el.style.transform = "scale(0.95)";
+
+        setTimeout(() => {
+          currentIdx = (currentIdx + 1) % quotes.length;
+          const q = quotes[currentIdx];
+          emoji.textContent = q.emoji;
+          el.textContent = q.text;
+          author.textContent = q.author;
+          el.style.transition = "all 0.35s ease";
+          el.style.opacity = "1";
+          el.style.transform = "scale(1)";
+        }, 300);
+
+        burstHearts();
+      }
+
+      function copyQuote() {
+        const q = quotes[currentIdx];
+        const text = `${q.text}\n${q.author}\n🌸 จาก: แรงใจน้อยๆ`;
+        navigator.clipboard.writeText(text).then(() => showToast());
+        burstHearts();
+      }
+
+      function showToast() {
+        const t = document.getElementById("toast");
+        t.classList.add("show");
+        setTimeout(() => t.classList.remove("show"), 3000);
+      }
+
+      function burstHearts() {
+        const emojis = ["💗", "🌸", "✨", "💫", "🌟", "🍀", "💕"];
+        for (let i = 0; i < 6; i++) {
+          setTimeout(() => {
+            const h = document.createElement("div");
+            h.className = "heart-burst";
+            h.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+            h.style.left = 30 + Math.random() * 40 + "vw";
+            h.style.top = 30 + Math.random() * 40 + "vh";
+            document.body.appendChild(h);
+            setTimeout(() => h.remove(), 1300);
+          }, i * 80);
+        }
+      }
+
+      // TRACKER
+      const trackerMessages = [
+        "กดเช็คสิ่งที่พี่ทำวันนี้แล้วนะครับ 🌸",
+        "ขอให้เริ่มวันใหม่ที่ สดใดกว่าเดิมนะครับ 🌱",
+        "จิบน้ำวันละนิดตลอดวันเลยหรอ เก่งมากกกกกครับ 🌟",
+        "ขอให้ได้กินของอร่อยๆนะครับ :) 💕",
+        "ขยับตัวเล็กน้อยด้วยยยยยย ❤️",
+        "เหลือนิดเดียวแล้วววววววว ✨",
+        "เก่งที่สุดเลยยยยยย พี่ทำครบทุกอย่างแล้ว ขอให้เป็นทำที่ดีมากๆนะครับ 🎉🌸",
+      ];
+
+      function toggleStep(el) {
+        el.classList.toggle("done");
+        updateMood();
+        burstHearts();
+      }
+
+      function updateMood() {
+        const steps = document.querySelectorAll(".step");
+        const done = document.querySelectorAll(".step.done").length;
+        const pct = (done / steps.length) * 100;
+        document.getElementById("moodFill").style.width = pct + "%";
+        document.getElementById("moodLabel").textContent =
+          trackerMessages[done];
+      }
+
+      // SPARKLES
+      function createSparkle() {
+        const s = document.createElement("div");
+        s.className = "sparkle";
+        const items = [
+          "🌸",
+          "✨",
+          "💫",
+          "⭐",
+          "💕",
+          "🍀",
+          "🌺",
+          "🎀",
+          "💖",
+          "🌟",
+        ];
+        s.textContent = items[Math.floor(Math.random() * items.length)];
+        s.style.left = Math.random() * 100 + "vw";
+        s.style.animationDuration = 5 + Math.random() * 8 + "s";
+        s.style.animationDelay = Math.random() * 2 + "s";
+        s.style.fontSize = 12 + Math.random() * 14 + "px";
+        document.body.appendChild(s);
+        setTimeout(() => s.remove(), 14000);
+      }
+
+      setInterval(createSparkle, 1200);
+      for (let i = 0; i < 8; i++) setTimeout(createSparkle, i * 300);
+    </script>
+  </body>
+</html>
